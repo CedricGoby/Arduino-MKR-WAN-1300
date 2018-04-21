@@ -2,6 +2,7 @@
 Arduino MKR WAN 1300 (LoRa connectivity)
 SparkFun Si7021 Breakout 
 Auteur : Cédric Goby
+Licence : MIT
 Versioning : https://github.com/CedricGoby/Arduino-MKR-WAN-1300
 
 This sketch prints the temperature and humidity from a Si7021 Breakout sensor to the Serial port
