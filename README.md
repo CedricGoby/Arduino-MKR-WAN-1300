@@ -1,7 +1,8 @@
-# Arduino-MKR-WAN-1300
+# Arduino-MKR-WAN-1300 (LoRa connectivity)
 
 ## Description
-Sketches to collect datas from sensors. Datas are sent to a LoRaWAN network server.
+Croquis pour collecter des données de différents capteurs.
+Les données sont envoyées en utilisant un réseau LoRa.
 
 ## Licence
 MIT
