@@ -1,0 +1,4 @@
+*.pyc
+.*.swp
+*.notes
+arduino_secrets.h
