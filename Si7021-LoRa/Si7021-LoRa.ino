@@ -60,7 +60,9 @@ void setup()
       while (1) {}
     };
     
-    // Affichage version et EUI
+    // Affichage de la version du firmware et EUI
+    // Croquis pour la mise à jour du firmware :
+    // https://github.com/arduino-libraries/MKRWAN/tree/master/examples/MKRWANFWUpdate_standalone
     Serial.print("La version de votre module est: ");
     Serial.println(modem.version());
     Serial.print("L'EUI de l'appareil est: ");
