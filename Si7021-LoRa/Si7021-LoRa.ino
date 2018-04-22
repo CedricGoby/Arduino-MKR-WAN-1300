@@ -4,8 +4,8 @@ Auteur : Cédric Goby
 Licence : MIT
 Versioning : https://github.com/CedricGoby/Arduino-MKR-WAN-1300
 
-Ce croquis recueille les données d'un capteur Si7021, les affiche via le port série
-et les envoie vers un réseau LoRa.
+Ce croquis recueille les données d'un capteur Si7021 connecté à un Arduino MKR WAN1300.
+Les données sont affichées via le port série et envoyées vers un réseau LoRa.
 
 Connexions matériel pour le Si7021:
 HTU21D ------------- Photon
@@ -60,9 +60,7 @@ void setup()
       while (1) {}
     };
     
-    // Affichage de la version du firmware et EUI
-    // Croquis pour la mise à jour du firmware :
-    // https://github.com/arduino-libraries/MKRWAN/tree/master/examples/MKRWANFWUpdate_standalone
+    // Affichage de la version du firmware (MKRWAN) et EUI
     Serial.print("La version de votre module est: ");
     Serial.println(modem.version());
     Serial.print("L'EUI de l'appareil est: ");
