@@ -139,9 +139,9 @@ void sendInfo()
   err = modem.endPacket(true);
   // Vérification
   if (err > 0) {
-    Serial.println("Message bien envoyé!");
+    Serial.println("Message bien envoyé :-)");
   } else {
-    Serial.println("Erreur lors de l'envoi du message :(");
+    Serial.println("Erreur lors de l'envoi du message :-(");
     Serial.println("(Pensez à envoyer un nombre limité de messages par minute en fonction de la force du signal");
     Serial.println("la fréquence d'envoi peut varier d'un message toutes les quelques secondes à un message par minute.)");
   }
