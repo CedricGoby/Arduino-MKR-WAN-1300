@@ -7,7 +7,7 @@ Croquis pour collecter des données de différents capteurs. Les données sont e
 
 ## Matériel
 * Arduino MKR WAN 1300 (LoRa connectivity)
-* SparkFun Si7021 Breakout : https://github.com/sparkfun/Si7021_Breakout
+* SparkFun Si7021 Breakout
 
 ## Licence
 MIT
