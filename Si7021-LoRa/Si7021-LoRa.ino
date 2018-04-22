@@ -85,24 +85,6 @@ void setup()
 }
 
 //---------------------------------------------------------------
-void loop()
-{
-// Programme principal
-
-    // Lit les valeurs de tous les capteurs
-    getWeather();
-    
-    // Ecrit les données sur le port série
-    printInfo();
-    
-    // Envoie les données sur le réseau LoRa
-    sendInfo();
-    
-    // Pause de X millisecondes
-    delay(30000);
-}
-
-//---------------------------------------------------------------
 void getWeather()
 {
   // Mesure l'humidité relative depuis le HTU21D ou le Si7021
@@ -164,4 +146,23 @@ void sendInfo()
     Serial.println("la fréquence d'envoi peut varier d'un message toutes les quelques secondes à un message par minute.)");
   }
 }
+
+//---------------------------------------------------------------
+void loop()
+{
+// Programme principal
+
+    // Lit les valeurs de tous les capteurs
+    getWeather();
+    
+    // Ecrit les données sur le port série
+    printInfo();
+    
+    // Envoie les données sur le réseau LoRa
+    sendInfo();
+    
+    // Pause de X millisecondes
+    delay(30000);
+}
+
 
