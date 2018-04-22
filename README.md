@@ -6,8 +6,8 @@ Cet Arduino basse consommation, équipé d'une puce LoRa, permet de réaliser de
 Croquis pour collecter des données de différents capteurs. Les données sont envoyées en utilisant un réseau LoRa.
 
 ## Matériel
-Arduino MKR WAN 1300 : https://www.arduino.cc/en/Tutorial/MKRWANFirstConfiguration
-SparkFun Si7021 Breakout : https://github.com/sparkfun/Si7021_Breakout
+* Arduino MKR WAN 1300 : https://www.arduino.cc/en/Tutorial/MKRWANFirstConfiguration
+* SparkFun Si7021 Breakout : https://github.com/sparkfun/Si7021_Breakout
 
 ## Licence
 MIT
