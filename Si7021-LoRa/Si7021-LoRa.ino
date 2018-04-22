@@ -60,10 +60,11 @@ void setup()
       while (1) {}
     };
     
-    // Affichage de la version du firmware (MKRWAN) et EUI
-    Serial.print("La version de votre module est: ");
+    // Affichage de la version du firmware de l'Arduino MKR WAN 1300
+    Serial.print("La version du firmware de l'Arduino MKR WAN 1300 est: ");
     Serial.println(modem.version());
-    Serial.print("L'EUI de l'appareil est: ");
+    // Affichage de l'EUI (64 bit end-device identifier, EUI-64 (unique))
+    Serial.print("L'EUI (64 bit end-device identifier) est: ");
     Serial.println(modem.deviceEUI());
 
     // Connexion au réseau LoRa en mode OTAA
