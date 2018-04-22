@@ -29,8 +29,8 @@ int GND = A2;
 // Crée une instance de HTU21D ou SI7021 et MPL3115A2
 Weather sensor;
 
-// Déclaration de trois Strings pour la mise en forme du message
-String stringT, stringH, msg;
+// Déclaration de Strings pour la mise en forme du message
+String stringSeparator, msg;
 
 /******************************************************************************
 Module LoRa Arduino MKR WAN 1300 - https://www.arduino.cc/en/Tutorial/MKRWANFirstConfiguration
@@ -117,9 +117,8 @@ void sendInfo()
 // Cette fonction envoie les mesures vers un réseau LoRa
 
   // Mise en forme du message
-  stringT = "T:";
-  stringH = "H:";
-  msg = stringT + tempf + " " + stringH + humidity;
+  stringSeparator = "\t";
+  msg = tempf + stringSeparator + humidity;
 
   // Envoi du message vers le port série
   Serial.println();
@@ -140,10 +139,12 @@ void sendInfo()
   // Vérification
   if (err > 0) {
     Serial.println("Message bien envoyé :-)");
+    Serial.println();
   } else {
     Serial.println("Erreur lors de l'envoi du message :-(");
     Serial.println("(Pensez à envoyer un nombre limité de messages par minute en fonction de la force du signal");
     Serial.println("la fréquence d'envoi peut varier d'un message toutes les quelques secondes à un message par minute.)");
+    Serial.println();
   }
 }
 
