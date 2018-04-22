@@ -1,11 +1,10 @@
 /******************************************************************************
-Arduino MKR WAN 1300 (LoRa connectivity)
-SparkFun Si7021 Breakout - https://github.com/sparkfun/Si7021_Breakout 
+Si7021-LoRa
 Auteur : Cédric Goby
 Licence : MIT
 Versioning : https://github.com/CedricGoby/Arduino-MKR-WAN-1300
 
-Ce croquis receuille les données d'un capteur Si7021, les affiche via le port série
+Ce croquis recueille les données d'un capteur Si7021, les affiche via le port série
 et les envoie vers un réseau LoRa.
 
 Connexions matériel pour le Si7021:
@@ -16,7 +15,7 @@ CL ------------------- D1/SCL
 DA ------------------- D0/SDA
 
 /******************************************************************************
-Si7021 Breakout
+SparkFun Si7021 Breakout - https://github.com/sparkfun/Si7021_Breakout 
 *******************************************************************************/
 #include "SparkFun_Si7021_Breakout_Library.h"
 #include <Wire.h>
@@ -34,7 +33,7 @@ Weather sensor;
 String stringT, stringH, msg;
 
 /******************************************************************************
-Module LoRa MKR WAN 1300
+Module LoRa Arduino MKR WAN 1300 - https://www.arduino.cc/en/Tutorial/MKRWANFirstConfiguration
 *******************************************************************************/
 #include <MKRWAN.h>
 LoRaModem modem;
@@ -89,12 +88,16 @@ void setup()
 void loop()
 {
 // Programme principal
+
     // Lit les valeurs de tous les capteurs
     getWeather();
+    
     // Ecrit les données sur le port série
     printInfo();
+    
     // Envoie les données sur le réseau LoRa
     sendInfo();
+    
     // Pause de X millisecondes
     delay(30000);
 }
