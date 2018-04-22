@@ -124,7 +124,7 @@ void printInfo()
   Serial.print(tempf);
   Serial.print("F, ");
 
-  Serial.print("Humidity:");
+  Serial.print("Hum:");
   Serial.print(humidity);
   Serial.println("%");
 }
@@ -141,7 +141,7 @@ void sendInfo()
 
   // Envoi du message vers le port série
   Serial.println();
-  Serial.print("Sending: " + msg + " - ");
+  Serial.print("Envoi: " + msg + " - ");
   // Conversion hexadecimale
   for (unsigned int i = 0; i < msg.length(); i++) {
     Serial.print(msg[i] >> 4, HEX);
