@@ -1,6 +1,6 @@
 /******************************************************************************
 Si7021-LoRa
-Auteur : Cédric Goby
+Auteur : Cédric Goby - INRA
 Licence : MIT
 Versioning : https://github.com/CedricGoby/Arduino-MKR-WAN-1300
 
