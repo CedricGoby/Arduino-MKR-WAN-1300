@@ -51,15 +51,15 @@ String appKey = SECRET_APP_KEY;
 void setup()
 {
     Serial.begin(115200);   // ouvre le port série USB à 115200 baud
-    
+    delay(10000);    
+
 // Setup LoRa    
-    while (!Serial);
     // Vérification du démarrage du module LoRa.
     if (!modem.begin(EU868)) {
       Serial.println("Echec du démarrage du module");
       while (1) {}
     };
-    
+   
     // Affichage de la version du firmware de l'Arduino MKR WAN 1300
     Serial.print("La version du firmware de l'Arduino MKR WAN 1300 est: ");
     Serial.println(modem.version());
