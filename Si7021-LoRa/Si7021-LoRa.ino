@@ -8,11 +8,11 @@ Ce croquis recueille les données d'un capteur Si7021 connecté à un Arduino MK
 Les données sont affichées via le port série et envoyées vers un réseau LoRa.
 
 Connexions matériel pour le Si7021:
-HTU21D ------------- Photon
-(-) ------------------- GND
-(+) ------------------- 3.3V (VCC)
-CL ------------------- D1/SCL
-DA ------------------- D0/SDA
+Si7021 ----> Arduino MKR 1300 WAN
+GND    ----> GND
+3.3V   ----> VCC
+SDA    ----> SDA
+SCL    ----> SCL
 
 /******************************************************************************
 SparkFun Si7021 Breakout - https://github.com/sparkfun/Si7021_Breakout 
@@ -30,7 +30,7 @@ int GND = A2;
 Weather sensor;
 
 // Déclaration de Strings pour la mise en forme du message
-String stringSeparator, msg;
+String stringT, stringH, stringSeparator, msg;
 
 /******************************************************************************
 Module LoRa Arduino MKR WAN 1300 - https://www.arduino.cc/en/Tutorial/MKRWANFirstConfiguration
@@ -51,7 +51,7 @@ String appKey = SECRET_APP_KEY;
 void setup()
 {
     Serial.begin(115200);   // ouvre le port série USB à 115200 baud
-    delay(10000);    
+    delay(5000);    
 
 // Setup LoRa    
     // Vérification du démarrage du module LoRa.
@@ -118,8 +118,12 @@ void sendInfo()
 // Cette fonction envoie les mesures vers un réseau LoRa
 
   // Mise en forme du message
-  stringSeparator = "\t";
-  msg = tempf + stringSeparator + humidity;
+  //stringSeparator = " ";
+  //stringT = "sensor=1";
+  //stringH = "Hum=";
+  //msg= tempf + stringSeparator + stringT;
+  //msg = stringT + tempf + stringSeparator + stringH + humidity;
+  msg = tempf;
 
   // Envoi du message vers le port série
   Serial.println();
