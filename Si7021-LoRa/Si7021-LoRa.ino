@@ -2,7 +2,7 @@
 Si7021-LoRa
 Auteur : Cédric Goby - Institut National de la Recherche Agronomique
 Licence : MIT
-Versioning : https://github.com/CedricGoby/Arduino-MKR-WAN-1300
+Versioning : https://gitlab.com/CedricGoby/Arduino-MKR-WAN-1300
 
 Ce croquis recueille les données d'un capteur Si7021 connecté à un Arduino MKR WAN1300.
 Les données sont affichées via le port série et envoyées vers un réseau LoRa.
@@ -170,5 +170,3 @@ void loop()
     // Pause de X millisecondes
     delay(30000);
 }
-
-
