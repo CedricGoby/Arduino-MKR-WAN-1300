@@ -21,7 +21,7 @@ SparkFun Si7021 Breakout - https://github.com/sparkfun/Si7021_Breakout
 #include <Wire.h>
 
 float humidity = 0;
-float tempf = 0;
+float temperature = 0;
 
 int power = A3;
 int GND = A2;
@@ -30,7 +30,7 @@ int GND = A2;
 Weather sensor;
 
 // Déclaration de Strings pour la mise en forme du message
-String stringT, stringH, stringSeparator, msg;
+String stringSeparator, msg;
 
 /******************************************************************************
 Module LoRa Arduino MKR WAN 1300 - https://www.arduino.cc/en/Tutorial/MKRWANFirstConfiguration
@@ -92,7 +92,7 @@ void getWeather()
   humidity = sensor.getRH();
 
   // Mesure la température depuis le HTU21D ou le Si7021
-  tempf = sensor.getTempF();
+  temperature = sensor.getTemp();
   // La température est mesurée chaque fois que l'humidité relative est demandée.
   // Il est plus rapide, toutefois, de la lire depuis la mesure d'humidité relative précédente
   // avec getTemp() plutôt qu'avec readTemp()
@@ -103,13 +103,13 @@ void printInfo()
 {
 // Cette fonction envoie les mesures vers le port série par défaut
 
-  Serial.print("Temp:");
-  Serial.print(tempf);
-  Serial.print("F, ");
+  Serial.print("temperature:");
+  Serial.print(temperature);
+  Serial.print(" C° ");
 
-  Serial.print("Hum:");
+  Serial.print("Humidity:");
   Serial.print(humidity);
-  Serial.println("%");
+  Serial.println( "%");
 }
 
 //---------------------------------------------------------------
@@ -118,12 +118,8 @@ void sendInfo()
 // Cette fonction envoie les mesures vers un réseau LoRa
 
   // Mise en forme du message
-  //stringSeparator = " ";
-  //stringT = "sensor=1";
-  //stringH = "Hum=";
-  //msg= tempf + stringSeparator + stringT;
-  //msg = stringT + tempf + stringSeparator + stringH + humidity;
-  msg = tempf;
+  stringSeparator = " ";
+  msg= temperature + stringSeparator + humidity;
 
   // Envoi du message vers le port série
   Serial.println();
@@ -168,5 +164,5 @@ void loop()
     sendInfo();
     
     // Pause de X millisecondes
-    delay(30000);
+    delay(120000);
 }
